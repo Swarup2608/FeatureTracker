@@ -1,8 +1,8 @@
 import dotenv from 'dotenv';
 import app from './app';
-import connectToDatabase from './config.ts/database';
-import { connectToRedis } from './config.ts/redis';
-import { PORT } from './config.ts/env';
+import connectToDatabase from './config/database';
+import { connectToRedis } from './config/redis';
+import { PORT } from './config/env';
 
 dotenv.config();
 

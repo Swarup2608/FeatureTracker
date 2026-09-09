@@ -3,6 +3,9 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 
+// Routes Imports
+import authRoutes from './modules/auth/Auth.routes';
+
 dotenv.config();
 
 const app: Express = express();
@@ -32,6 +35,9 @@ app.use((_req: Request, res: Response) => {
     status: 404,
   });
 });
+
+// Routes 
+app.use('/api/v1/auth', authRoutes);
 
 // Error handling middleware (must be last)
 app.use((err: CustomError, _req: Request, res: Response, _next: NextFunction) => {
